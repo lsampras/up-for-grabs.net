@@ -17,11 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Ruby
-        uses: ruby/setup-ruby@5f19ec79cedfadb78ab837f95b87734d0003c899
+        uses: ruby/setup-ruby@bfefad842bb982ff05b233bcbc1571d97a87e69f
         with:
-          ruby-version: '3.2'
           bundler-cache: true
-          cache-version: 0
+
       - name: Run script to cleanup inactive projects
         run: bundle exec ruby scripts/cleanup_projects.rb
         env:
